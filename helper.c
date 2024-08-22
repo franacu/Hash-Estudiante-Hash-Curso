@@ -75,7 +75,7 @@ int hash(char *id)
 {
     int suma=0;
 
-    for(int i=0;i<TAM;i++)
+    for(int i=0;i<12;i++)
     {
         suma=suma+id[i];
     }
@@ -155,16 +155,13 @@ Estudiante *buscarEstudiante(TablaHashE *estudiantes,char *idEstudiante)
     }
     return NULL;
 }
-Curso *buscarCurso(TablaHashC *cursos,char *idCurso)
-{
-    int posC= hash(idCurso);
-    while (cursos->curso[posC]!=NULL )
-    {
-        if(strcmp(cursos->curso[posC]->id,idCurso)==0)
-        {
+Curso *buscarCurso(TablaHashC *cursos, char *idCurso) {
+    int posC = hash(idCurso);
+    while (cursos->curso[posC] != NULL) {
+        if (strcmp(cursos->curso[posC]->id, idCurso) == 0) {
             return cursos->curso[posC];
         }
-        posC=(posC+1) % TAM;
+        posC = (posC + 1) % TAM;
     }
     return NULL;
 }
@@ -241,20 +238,17 @@ void imprimirCursos(TablaHashC * cursos,TablaHashE*estudiantes)
         }
     }
 }
-void imprimirEstudiante(Estudiante *estudiante,TablaHashC *cursos){
+void imprimirEstudiante(Estudiante *estudiante, TablaHashC *cursos) {
     if (estudiante == NULL) {
-        printf("\nCurso no encontrado\n");
+        printf("\nEstudiante no encontrado\n");
         return;
     }
     printf("\nID: %s\t", estudiante->id);
     printf("Nombre: %s\n", estudiante->nombre);
-    Nodo * aux = estudiante->curso;
-    while (aux != NULL) {
-        Curso *curso = buscarCurso(cursos, aux->id);
-        if (curso != NULL)
-        {
-            printf("Curso: %s\t", curso->nombre);
-        }
+    Nodo *aux = estudiante->curso;
+    while (aux != NULL)
+    {
+        printf("MATERIA:%s\n", buscarCurso(cursos,aux->id)->nombre);
         aux = aux->sig;
     }
     printf("\n");

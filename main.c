@@ -24,10 +24,10 @@ int main() {
     registrarCurso(tablaCursos, "CUR101", "123", tablaEstudiantes);
     registrarCurso(tablaCursos, "CUR102", "123", tablaEstudiantes);
     registrarCurso(tablaCursos, "CUR101", "456", tablaEstudiantes);
-    registrarCurso(tablaCursos, "CUR102", "789", tablaEstudiantes);
+    registrarCurso(tablaCursos, "CUR101", "789", tablaEstudiantes);
 
-    printf("Mostramos Cursos:\n");
-    imprimirCursos(tablaCursos, tablaEstudiantes);
+    printf("Mostramos Estudiantes con sus Cursos:\n");
+    imprimirEstudiantes(tablaCursos, tablaEstudiantes);
 
 
     // Eliminar un estudiante y sus referencias en los cursos
