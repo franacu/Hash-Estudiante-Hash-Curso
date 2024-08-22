@@ -1,0 +1,3 @@
+/Users/fran/Documents/Paradigmas de Programacion 2/untitled19/cmake-build-debug/CMakeFiles/untitled19.dir
+/Users/fran/Documents/Paradigmas de Programacion 2/untitled19/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/fran/Documents/Paradigmas de Programacion 2/untitled19/cmake-build-debug/CMakeFiles/rebuild_cache.dir
